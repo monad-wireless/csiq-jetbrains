@@ -62,6 +62,11 @@ jobs:
       - name: Verify plugin
         run: ./gradlew verifyPlugin -PplatformLocalPath= --stacktrace
 
+      - name: Release notes
+        # The CHANGELOG.md section for this version, the same text the plugin
+        # descriptor carries as its change notes.
+        run: ./gradlew getChangelog -PplatformLocalPath= --no-header --no-links --no-empty-sections -q --console=plain > build/RELEASE_NOTES.md
+
       - name: Checksums
         run: |
           cd build
@@ -80,7 +85,7 @@ jobs:
           esac
           gh release create "$GITHUB_REF_NAME" \
             --title "CSIQ ${PLUGIN_VERSION}" \
-            --generate-notes \
+            --notes-file build/RELEASE_NOTES.md \
             --verify-tag \
             $prerelease \
             "build/distributions/csiq-jetbrains-${PLUGIN_VERSION}.zip" \

@@ -1,3 +1,4 @@
+import org.jetbrains.changelog.Changelog
 import org.jetbrains.intellij.platform.gradle.IntelliJPlatformType
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -7,6 +8,9 @@ plugins {
     // Version comes from the settings plugin, which already put it on the
     // classpath. Repeating it here is an error in Gradle 9.
     id("org.jetbrains.intellij.platform")
+    // Reads CHANGELOG.md into the descriptor's change notes and, through
+    // `getChangelog`, into the GitHub Release notes.
+    id("org.jetbrains.changelog") version "2.5.0"
 }
 
 group = providers.gradleProperty("pluginGroup").get()
@@ -69,6 +73,16 @@ intellijPlatform {
     pluginConfiguration {
         name = "CSIQ"
         version = providers.gradleProperty("pluginVersion")
+        // The CHANGELOG.md section for exactly this version. A version with no
+        // section fails the build, so a zip never ships without its notes.
+        changeNotes = providers.gradleProperty("pluginVersion").map { pluginVersion ->
+            with(changelog) {
+                renderItem(
+                    get(pluginVersion).withHeader(false).withEmptySections(false),
+                    Changelog.OutputType.HTML,
+                )
+            }
+        }
         ideaVersion {
             sinceBuild = providers.gradleProperty("pluginSinceBuild")
             // A blank property means "no upper bound", which has to leave the
@@ -94,6 +108,12 @@ intellijPlatform {
             }
         }
     }
+}
+
+changelog {
+    repositoryUrl = "https://github.com/monad-wireless/csiq-jetbrains"
+    // A new [Unreleased] section starts empty rather than with template groups.
+    groups.empty()
 }
 
 tasks {

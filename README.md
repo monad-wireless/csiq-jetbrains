@@ -230,8 +230,11 @@ Both run on JDK 25 and download the platform, so CI never depends on an
 installed IDE. The test reports artifact includes the PNGs the render tests
 write, which is how a change to the plot layout is reviewed.
 
-To cut a release, set `pluginVersion` in `gradle.properties`, merge it, then
-push a tag with the same version:
+To cut a release, move the `[Unreleased]` entries in `CHANGELOG.md` under a
+section for the new version, set `pluginVersion` in `gradle.properties` to the
+same version, merge both, then push a tag with that version. The section becomes
+the plugin's change notes and the GitHub Release notes, and a build fails when
+`pluginVersion` has no section.
 
 ```bash
 git tag v0.1.0
