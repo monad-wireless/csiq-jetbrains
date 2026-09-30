@@ -1,0 +1,716 @@
+{
+  "schema": "csid-session/1",
+  "session_id": "monad02_walk-survey-48_20260908-070541-seg0002",
+  "run_id": "lib-walk-survey-2026-09-08-01",
+  "run_id_generated": false,
+  "experiment": "walk-survey-48",
+  "tag": "Position survey walk, 5 GHz ch48 HT20 @250 Hz + BLE — OBSERVER",
+  "radio": {
+    "interface": "wlp1s0",
+    "monitor": "wlp1s0mon0",
+    "band": "5",
+    "channel": 48,
+    "control_freq_mhz": 5240,
+    "center_freq_mhz": null,
+    "width": "HT20",
+    "interval_us": 0,
+    "mac_filter": [],
+    "achieved_control_freq_mhz": 5240,
+    "achieved_width_mhz": 20,
+    "achieved_center_freq_mhz": 5240,
+    "observed": false
+  },
+  "ble": {
+    "adapter": "hci0",
+    "scan_type": "passive",
+    "scan_interval_ms": 100.0,
+    "scan_window_ms": 100.0,
+    "required": false,
+    "artefact": "ble_rssi.parquet",
+    "durable_log": "ble_scan.jsonl",
+    "parquet_schema": "ble-rssi/2",
+    "hash_algorithm": "sha256(salt || addr_type || addr)[:hash_bytes], hex",
+    "hash_bytes": 8,
+    "salt_bits": 256,
+    "salt_persisted": false,
+    "lab_namespace_uuid": "6d6f6e61-6461-4076-b100-000000000000"
+  },
+  "timesync": {
+    "required": false,
+    "artefact": "time_transfer.parquet",
+    "durable_log": "time_transfer.jsonl",
+    "parquet_schema": "time-transfer/1",
+    "ftm_tolerance_us": 2000,
+    "one_way_floor_us": 5000
+  },
+  "census": {
+    "artefact": "frame_census.jsonl",
+    "schema": "frame-census/1",
+    "top_n": 32,
+    "max_transmitters": 4096
+  },
+  "survey": {
+    "interface": "wlan0",
+    "at_open": {
+      "interface": "wlan0",
+      "taken_at": "2026-09-08T07:05:41Z",
+      "scan_ms": 3251,
+      "link": {
+        "connected": true,
+        "bssid": "54:d7:e3:2b:bd:f1",
+        "ssid": "eduroam",
+        "freq_mhz": 5260,
+        "channel": 52,
+        "signal_dbm": -58,
+        "tx_bitrate": "180.0 MBit/s"
+      },
+      "bss": [
+        {
+          "bssid": "54:d7:e3:2b:bd:f0",
+          "freq_mhz": 5260,
+          "channel": 52,
+          "band": "5",
+          "ssid": "Guest",
+          "signal_dbm": -58.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2b:bd:f1",
+          "freq_mhz": 5260,
+          "channel": 52,
+          "band": "5",
+          "ssid": "eduroam",
+          "signal_dbm": -58.0,
+          "width_mhz": 20,
+          "associated": true
+        },
+        {
+          "bssid": "54:d7:e3:2b:bd:f2",
+          "freq_mhz": 5260,
+          "channel": 52,
+          "band": "5",
+          "ssid": "EduSummitSK",
+          "signal_dbm": -58.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2b:bd:f3",
+          "freq_mhz": 5260,
+          "channel": 52,
+          "band": "5",
+          "ssid": "KCKB-FIIT-STUBA",
+          "signal_dbm": -58.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2b:bd:f4",
+          "freq_mhz": 5260,
+          "channel": 52,
+          "band": "5",
+          "ssid": "DOD25",
+          "signal_dbm": -58.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:30:d2:20",
+          "freq_mhz": 2412,
+          "channel": 1,
+          "band": "2.4",
+          "ssid": "Guest",
+          "signal_dbm": -63.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:30:d2:21",
+          "freq_mhz": 2412,
+          "channel": 1,
+          "band": "2.4",
+          "ssid": "eduroam",
+          "signal_dbm": -63.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:30:d2:23",
+          "freq_mhz": 2412,
+          "channel": 1,
+          "band": "2.4",
+          "ssid": "KCKB-FIIT-STUBA",
+          "signal_dbm": -63.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:30:d2:24",
+          "freq_mhz": 2412,
+          "channel": 1,
+          "band": "2.4",
+          "ssid": "DOD25",
+          "signal_dbm": -63.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:30:d2:22",
+          "freq_mhz": 2412,
+          "channel": 1,
+          "band": "2.4",
+          "ssid": "EduSummitSK",
+          "signal_dbm": -64.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2b:bd:e3",
+          "freq_mhz": 2462,
+          "channel": 11,
+          "band": "2.4",
+          "ssid": "KCKB-FIIT-STUBA",
+          "signal_dbm": -65.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2b:bd:e4",
+          "freq_mhz": 2462,
+          "channel": 11,
+          "band": "2.4",
+          "ssid": "DOD25",
+          "signal_dbm": -65.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2e:a6:80",
+          "freq_mhz": 2437,
+          "channel": 6,
+          "band": "2.4",
+          "ssid": "Guest",
+          "signal_dbm": -65.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2e:a6:93",
+          "freq_mhz": 5220,
+          "channel": 44,
+          "band": "5",
+          "ssid": "KCKB-FIIT-STUBA",
+          "signal_dbm": -65.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2e:a6:90",
+          "freq_mhz": 5220,
+          "channel": 44,
+          "band": "5",
+          "ssid": "Guest",
+          "signal_dbm": -66.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2e:a6:91",
+          "freq_mhz": 5220,
+          "channel": 44,
+          "band": "5",
+          "ssid": "eduroam",
+          "signal_dbm": -66.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2e:a6:92",
+          "freq_mhz": 5220,
+          "channel": 44,
+          "band": "5",
+          "ssid": "EduSummitSK",
+          "signal_dbm": -66.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2e:a6:94",
+          "freq_mhz": 5220,
+          "channel": 44,
+          "band": "5",
+          "ssid": "DOD25",
+          "signal_dbm": -66.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2c:2c:a1",
+          "freq_mhz": 2462,
+          "channel": 11,
+          "band": "2.4",
+          "ssid": "eduroam",
+          "signal_dbm": -68.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2c:2c:a3",
+          "freq_mhz": 2462,
+          "channel": 11,
+          "band": "2.4",
+          "ssid": "KCKB-FIIT-STUBA",
+          "signal_dbm": -70.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:30:69:d0",
+          "freq_mhz": 5500,
+          "channel": 100,
+          "band": "5",
+          "ssid": "Guest",
+          "signal_dbm": -70.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:30:69:d1",
+          "freq_mhz": 5500,
+          "channel": 100,
+          "band": "5",
+          "ssid": "eduroam",
+          "signal_dbm": -70.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:30:69:d4",
+          "freq_mhz": 5500,
+          "channel": 100,
+          "band": "5",
+          "ssid": "DOD25",
+          "signal_dbm": -70.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:30:69:d3",
+          "freq_mhz": 5500,
+          "channel": 100,
+          "band": "5",
+          "ssid": "KCKB-FIIT-STUBA",
+          "signal_dbm": -71.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2c:2c:b0",
+          "freq_mhz": 5180,
+          "channel": 36,
+          "band": "5",
+          "ssid": "Guest",
+          "signal_dbm": -76.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2c:2c:b1",
+          "freq_mhz": 5180,
+          "channel": 36,
+          "band": "5",
+          "ssid": "eduroam",
+          "signal_dbm": -76.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2c:2c:b2",
+          "freq_mhz": 5180,
+          "channel": 36,
+          "band": "5",
+          "ssid": "EduSummitSK",
+          "signal_dbm": -76.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2c:2c:b3",
+          "freq_mhz": 5180,
+          "channel": 36,
+          "band": "5",
+          "ssid": "KCKB-FIIT-STUBA",
+          "signal_dbm": -76.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2c:2c:b4",
+          "freq_mhz": 5180,
+          "channel": 36,
+          "band": "5",
+          "ssid": "DOD25",
+          "signal_dbm": -76.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "a8:5b:f7:20:cb:91",
+          "freq_mhz": 5540,
+          "channel": 108,
+          "band": "5",
+          "ssid": "eduroam",
+          "signal_dbm": -77.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2d:c2:10",
+          "freq_mhz": 5620,
+          "channel": 124,
+          "band": "5",
+          "ssid": "Guest",
+          "signal_dbm": -78.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2d:c2:11",
+          "freq_mhz": 5620,
+          "channel": 124,
+          "band": "5",
+          "ssid": "eduroam",
+          "signal_dbm": -78.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "a8:5b:f7:20:cb:90",
+          "freq_mhz": 5540,
+          "channel": 108,
+          "band": "5",
+          "ssid": "Guest",
+          "signal_dbm": -78.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "a8:5b:f7:20:cb:92",
+          "freq_mhz": 5540,
+          "channel": 108,
+          "band": "5",
+          "ssid": "EduSummitSK",
+          "signal_dbm": -78.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "a8:5b:f7:20:cb:93",
+          "freq_mhz": 5540,
+          "channel": 108,
+          "band": "5",
+          "ssid": "KCKB-FIIT-STUBA",
+          "signal_dbm": -78.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2d:c2:12",
+          "freq_mhz": 5620,
+          "channel": 124,
+          "band": "5",
+          "ssid": "EduSummitSK",
+          "signal_dbm": -79.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2d:c2:13",
+          "freq_mhz": 5620,
+          "channel": 124,
+          "band": "5",
+          "ssid": "KCKB-FIIT-STUBA",
+          "signal_dbm": -79.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "a8:5b:f7:21:cf:d0",
+          "freq_mhz": 5220,
+          "channel": 44,
+          "band": "5",
+          "ssid": "Guest",
+          "signal_dbm": -80.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "a8:5b:f7:21:cf:d2",
+          "freq_mhz": 5220,
+          "channel": 44,
+          "band": "5",
+          "ssid": "EduSummitSK",
+          "signal_dbm": -80.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "a8:5b:f7:21:9d:b1",
+          "freq_mhz": 5660,
+          "channel": 132,
+          "band": "5",
+          "ssid": "eduroam",
+          "signal_dbm": -81.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "a8:5b:f7:21:9d:b3",
+          "freq_mhz": 5660,
+          "channel": 132,
+          "band": "5",
+          "ssid": "KCKB-FIIT-STUBA",
+          "signal_dbm": -81.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "a8:5b:f7:21:9d:b4",
+          "freq_mhz": 5660,
+          "channel": 132,
+          "band": "5",
+          "ssid": "DOD25",
+          "signal_dbm": -81.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "a8:5b:f7:21:cf:d4",
+          "freq_mhz": 5220,
+          "channel": 44,
+          "band": "5",
+          "ssid": "DOD25",
+          "signal_dbm": -81.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2e:89:d1",
+          "freq_mhz": 5260,
+          "channel": 52,
+          "band": "5",
+          "ssid": "eduroam",
+          "signal_dbm": -82.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "a8:5b:f7:21:9d:b0",
+          "freq_mhz": 5660,
+          "channel": 132,
+          "band": "5",
+          "ssid": "Guest",
+          "signal_dbm": -82.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "a8:5b:f7:21:9d:b2",
+          "freq_mhz": 5660,
+          "channel": 132,
+          "band": "5",
+          "ssid": "EduSummitSK",
+          "signal_dbm": -82.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2f:b4:d1",
+          "freq_mhz": 5300,
+          "channel": 60,
+          "band": "5",
+          "ssid": "eduroam",
+          "signal_dbm": -84.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2f:b4:d3",
+          "freq_mhz": 5300,
+          "channel": 60,
+          "band": "5",
+          "ssid": "KCKB-FIIT-STUBA",
+          "signal_dbm": -84.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2f:b4:d0",
+          "freq_mhz": 5300,
+          "channel": 60,
+          "band": "5",
+          "ssid": "Guest",
+          "signal_dbm": -85.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2f:b4:d2",
+          "freq_mhz": 5300,
+          "channel": 60,
+          "band": "5",
+          "ssid": "EduSummitSK",
+          "signal_dbm": -85.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2f:b4:d4",
+          "freq_mhz": 5300,
+          "channel": 60,
+          "band": "5",
+          "ssid": "DOD25",
+          "signal_dbm": -85.0,
+          "width_mhz": 20,
+          "associated": false
+        },
+        {
+          "bssid": "54:d7:e3:2c:1b:31",
+          "freq_mhz": 5220,
+          "channel": 44,
+          "band": "5",
+          "ssid": "eduroam",
+          "signal_dbm": -86.0,
+          "width_mhz": 20,
+          "associated": false
+        }
+      ],
+      "bss_total": 52
+    }
+  },
+  "filter": {
+    "frame_types": null,
+    "rate_n_flags_val": null,
+    "rate_n_flags_mask": null,
+    "count": null,
+    "timeout_us": null,
+    "fingerprint": "no-filter"
+  },
+  "environment": {
+    "hostname": "monad02",
+    "kernel": "6.8.0-1064-raspi",
+    "driver_module": "/lib/modules/6.8.0-1064-raspi/updates/dkms/iwlwifi.ko",
+    "firmware": "78.3bfdc55f.0 ty-a0-gf-a0-78.uc",
+    "regdomain": "country SK: DFS-ETSI",
+    "cpu_governor": "performance",
+    "csid_version": "0.3.0",
+    "build": {
+      "revision": "",
+      "revision_source": "none",
+      "built_at": "2026-09-05T18:38:24Z",
+      "rustc": "rustc 1.97.1 (8bab26f4f 2026-07-14)",
+      "profile": "release",
+      "csiq_format_version": 1
+    }
+  },
+  "started_at": "2026-09-08T07:15:45Z",
+  "ended_at": "2026-09-08T07:25:45Z",
+  "status": "complete",
+  "summary": {
+    "capture_bytes": 195093500,
+    "records": 278705,
+    "empty_records": 0,
+    "mean_rate_hz": 464.39150158391726,
+    "live_dropped": 0,
+    "tone_counts": [
+      52
+    ],
+    "ble": {
+      "status": "segment",
+      "observations": 239,
+      "distinct_device_hashes": 5,
+      "mean_rate_hz": 0.40164453054301413,
+      "max_gap_s": 9.743,
+      "gaps_over_alert": 0,
+      "gap_alert_s": 0.0,
+      "scan_restarts": 0,
+      "adapter_errors": 0,
+      "unparsed_events": 0,
+      "rssi_unavailable": 0,
+      "parquet_rows": 0,
+      "malformed_log_lines": 0,
+      "lab_frames": 0,
+      "distinct_lab_participants": 0
+    },
+    "transmitters": {
+      "distinct": 105,
+      "top": [
+        {
+          "mac": "ef:be:ad:de:ad:de",
+          "records": 141232
+        },
+        {
+          "mac": "02:6d:6f:6e:01:09",
+          "records": 135358
+        },
+        {
+          "mac": "00:00:5e:00:53:01",
+          "records": 1869
+        },
+        {
+          "mac": "00:00:5e:00:53:02",
+          "records": 47
+        },
+        {
+          "mac": "00:00:5e:00:53:03",
+          "records": 6
+        },
+        {
+          "mac": "00:00:5e:00:53:04",
+          "records": 6
+        },
+        {
+          "mac": "00:00:5e:00:53:05",
+          "records": 6
+        },
+        {
+          "mac": "00:00:5e:00:53:06",
+          "records": 6
+        },
+        {
+          "mac": "00:00:5e:00:53:07",
+          "records": 6
+        },
+        {
+          "mac": "00:00:5e:00:53:08",
+          "records": 6
+        },
+        {
+          "mac": "00:00:5e:00:53:09",
+          "records": 6
+        },
+        {
+          "mac": "00:00:5e:00:53:0a",
+          "records": 6
+        },
+        {
+          "mac": "00:00:5e:00:53:0b",
+          "records": 6
+        },
+        {
+          "mac": "00:00:5e:00:53:0c",
+          "records": 6
+        },
+        {
+          "mac": "00:00:5e:00:53:0d",
+          "records": 6
+        },
+        {
+          "mac": "00:00:5e:00:53:0e",
+          "records": 6
+        }
+      ]
+    }
+  }
+}

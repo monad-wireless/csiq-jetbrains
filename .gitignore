@@ -1,0 +1,49 @@
+# --- Gradle ------------------------------------------------------------------
+.gradle/
+build/
+out/
+local.properties
+# The wrapper jar is source, not output. Keep it.
+!gradle/wrapper/gradle-wrapper.jar
+
+# --- Kotlin ------------------------------------------------------------------
+# Kotlin 2.x daemon session and error files.
+.kotlin/
+
+# --- IntelliJ Platform Gradle Plugin -----------------------------------------
+# Project-local cache: downloaded and extracted IDEs, the runIde sandbox,
+# localPlatformArtifacts ivy descriptors that hold absolute paths, and the
+# coroutines agent. Rebuilt on demand, and large.
+.intellijPlatform/
+
+# --- IDE ---------------------------------------------------------------------
+.idea/
+*.iml
+*.ipr
+*.iws
+.fleet/
+.vscode/
+
+# --- Signing material ----------------------------------------------------------
+# Marketplace signing inputs never belong in the tree. CI reads them from
+# repository secrets.
+*.pem
+*.key
+*.p12
+chain.crt
+
+# --- Real captures -------------------------------------------------------------
+# The suite takes real data through CSIQ_TEST_CAPTURES / CSIQ_TEST_SESSION from
+# outside the tree. Only the scrubbed fixtures under src/test/resources belong
+# here, so a capture or sidecar dropped anywhere else is ignored.
+*.csiq
+*.csiq.*
+capture.raw
+capture.raw.*
+!src/test/resources/fixtures/*.csiq
+
+# --- OS ----------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*~

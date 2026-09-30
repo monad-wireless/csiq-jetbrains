@@ -1,0 +1,36 @@
+<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!--
+    A waterfall: subcarriers stacked on the vertical axis, time running left to
+    right, amplitude carried by the shade. The one figure that says what this
+    plugin is for.
+  -->
+  <defs>
+    <clipPath id="frame">
+      <rect x="4" y="6" width="32" height="28" rx="3"/>
+    </clipPath>
+  </defs>
+
+  <rect x="4" y="6" width="32" height="28" rx="3" fill="#F3F5F8"/>
+
+  <g clip-path="url(#frame)">
+    <!-- columns of a spectrogram, low subcarriers at the bottom -->
+    <rect x="4"  y="6"  width="4" height="28" fill="#2A78D6" opacity="0.25"/>
+    <rect x="8"  y="6"  width="4" height="28" fill="#2A78D6" opacity="0.55"/>
+    <rect x="12" y="6"  width="4" height="28" fill="#2A78D6" opacity="0.30"/>
+    <rect x="16" y="6"  width="4" height="28" fill="#2A78D6" opacity="0.80"/>
+    <rect x="20" y="6"  width="4" height="28" fill="#2A78D6" opacity="0.40"/>
+    <rect x="24" y="6"  width="4" height="28" fill="#2A78D6" opacity="0.65"/>
+    <rect x="28" y="6"  width="4" height="28" fill="#2A78D6" opacity="0.22"/>
+    <rect x="32" y="6"  width="4" height="28" fill="#2A78D6" opacity="0.50"/>
+
+    <!-- a deep null band and a strong band, the structure a reader looks for -->
+    <rect x="4" y="15" width="32" height="3" fill="#F3F5F8" opacity="0.75"/>
+    <rect x="4" y="24" width="32" height="2" fill="#1BAF7A" opacity="0.85"/>
+  </g>
+
+  <rect x="4" y="6" width="32" height="28" rx="3" stroke="#3B4754" stroke-width="1.5"/>
+
+  <!-- the selected record: the marker every view follows -->
+  <path d="M20 3.5 L23 3.5 L21.5 6.5 Z" fill="#EB6834"/>
+  <line x1="21.5" y1="6" x2="21.5" y2="34" stroke="#EB6834" stroke-width="1.2" opacity="0.9"/>
+</svg>

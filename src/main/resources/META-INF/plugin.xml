@@ -1,0 +1,85 @@
+<idea-plugin>
+    <id>io.monadcount.csiq</id>
+    <vendor email="jdubec@culturepulse.ai" url="https://github.com/monad-wireless/csiq-jetbrains">MonadCount</vendor>
+
+    <description><![CDATA[
+        <p>Opens Wi-Fi Channel State Information captures written in the
+        <b>CSIQ</b> interchange format, and the raw driver streams they are
+        derived from, as a visual editor inside any IntelliJ-based IDE.</p>
+
+        <ul>
+          <li><b>Waterfall</b> - amplitude over subcarrier and time, across the
+              whole capture, with zoom down to individual records. The time axis
+              shows wall clock, elapsed time, or the host's own stamps, and the
+              wall clock is anchored once and then advanced by the baseband
+              clock, which an NTP step cannot move.</li>
+          <li><b>Spectrum</b> - one record's amplitude and phase per tone, per
+              chain, with a chain that reported no measurement marked as such.</li>
+          <li><b>Impulse response</b> - the channel impulse response and the
+              inter-chain conjugate product, with the early-to-late energy ratio
+              that tells you whether the coefficients were read in the right
+              order.</li>
+          <li><b>Records</b> - every record's clocks, RSSI, PHY label, source
+              MAC and geometry, read from an index rather than from the file.</li>
+          <li><b>Fields and bytes</b> - each TLV with the specification's own
+              wording for what it means, the 272-byte driver header decoded at
+              its documented offsets, and a hex view.</li>
+          <li><b>Session</b> - the embedded session block, and what the capture
+              says about itself: rate, dropped reports, all-zero records, stale
+              chains, and how the stream ended.</li>
+        </ul>
+
+        <p><b>Formats.</b> <code>.csiq</code>, <code>.csiq.zst</code> and
+        <code>capture.raw</code>. A compressed container is expanded once into a
+        local cache, because the specification compresses the file and never the
+        format.</p>
+
+        <p><b>Remote captures.</b> Every byte is read through the platform's
+        virtual file system, never through a filesystem path, so a capture on S3,
+        HDFS or SFTP mounted by <i>Big Data Tools</i> or <i>Remote File
+        Systems</i> opens exactly like a local one. Neither plugin is required,
+        and this one declares no dependency on either.</p>
+    ]]></description>
+
+    <!-- Platform core only. Nothing here needs a language, a build system or a
+         commercial IDE, so the plugin installs into PyCharm, IDEA Community and
+         Ultimate, CLion, RustRover, GoLand and DataGrip alike. -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Every spelling the archive and the wider world produce. The
+             extension list is the uncompressed form; the patterns cover a
+             container that arrived wrapped in a codec. -->
+        <fileType
+            name="CSIQ"
+            implementationClass="io.monadcount.csiq.ide.CsiqFileType"
+            fieldName="INSTANCE"
+            extensions="csiq"
+            fileNames="capture.raw"
+            patterns="*.csiq.zst;*.csiq.zstd;*.csiq.gz;*.csiq.gzip;*.csiq.xz;*.csiq.bz2;*.csiq.bzip2;*.csiq.lz4;*.csiq.lzma;capture.raw.zst;capture.raw.gz;capture.raw.xz;capture.raw.bz2;capture.raw.lz4"/>
+
+        <!-- order="first" so that a generic binary viewer from another plugin,
+             such as Big Data File Viewer, does not claim a capture first. -->
+        <fileEditorProvider
+            implementation="io.monadcount.csiq.ide.CsiqEditorProvider"
+            order="first"/>
+
+        <applicationService serviceImplementation="io.monadcount.csiq.ide.CsiqSettings"/>
+
+        <applicationConfigurable
+            parentId="tools"
+            instance="io.monadcount.csiq.ide.CsiqConfigurable"
+            id="io.monadcount.csiq.settings"
+            displayName="CSI Captures"/>
+    </extensions>
+
+    <actions>
+        <action
+            id="io.monadcount.csiq.OpenCapture"
+            class="io.monadcount.csiq.ide.OpenCaptureAction"
+            text="Open CSI Capture..."
+            description="Open a .csiq, .csiq.zst or capture.raw file, local or remote">
+            <add-to-group group-id="FileOpenGroup" anchor="last"/>
+        </action>
+    </actions>
+</idea-plugin>

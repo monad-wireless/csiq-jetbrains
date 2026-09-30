@@ -1,0 +1,10 @@
+<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- A waterfall at file-icon size: four subcarrier bands, one selected record. -->
+  <rect x="1.5" y="2.5" width="13" height="11" rx="1.5" fill="#F3F5F8" stroke="#6C707E" stroke-width="1"/>
+  <rect x="2.5" y="3.5" width="2" height="9" fill="#2A78D6" opacity="0.35"/>
+  <rect x="4.5" y="3.5" width="2" height="9" fill="#2A78D6" opacity="0.75"/>
+  <rect x="6.5" y="3.5" width="2" height="9" fill="#2A78D6" opacity="0.30"/>
+  <rect x="8.5" y="3.5" width="2" height="9" fill="#2A78D6" opacity="0.85"/>
+  <rect x="10.5" y="3.5" width="3" height="9" fill="#2A78D6" opacity="0.45"/>
+  <rect x="2.5" y="7" width="11" height="1" fill="#F3F5F8" opacity="0.85"/>
+</svg>
