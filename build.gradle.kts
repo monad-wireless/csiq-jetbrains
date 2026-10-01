@@ -60,12 +60,12 @@ dependencies {
     // These are bundled rather than taken from the IDE, which happens to ship
     // all three: a platform library is not part of the plugin API contract and
     // can be dropped between releases.
-    implementation("com.github.luben:zstd-jni:1.5.7-17")
+    implementation("com.github.luben:zstd-jni:1.5.7-20")
     implementation("org.apache.commons:commons-compress:1.28.0")
     implementation("org.tukaani:xz:1.12")
 
     testImplementation(kotlin("test"))
-    testImplementation("org.junit.jupiter:junit-jupiter:5.11.4")
+    testImplementation("org.junit.jupiter:junit-jupiter:6.1.3")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
